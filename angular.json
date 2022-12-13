@@ -95,6 +95,7 @@
   },
   "defaultProject": "demo-h-anh",
   "cli": {
+    "analytics": false,
     "packageManager": "npm"
   }
 }

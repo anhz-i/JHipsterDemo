@@ -35,6 +35,8 @@
     "form": {
       "username.label": "Username",
       "username.placeholder": "Your username",
+      "phone.label": "Phone",
+      "phone.placeholder": "Your phone",
       "currentpassword.label": "Current password",
       "currentpassword.placeholder": "Current password",
       "newpassword.label": "New password",
@@ -76,6 +78,12 @@
           "invalid": "Your email is invalid.",
           "minlength": "Your email is required to be at least 5 characters.",
           "maxlength": "Your email cannot be longer than 50 characters."
+        },
+        "phone": {
+          "required": "Your phone is required.",
+          "pattern": "Your phone must be number.",
+          "minlength": "Your phone is required to be at least 10 characters.",
+          "maxlength": "Your phone cannot be longer than 20 characters."
         }
       }
     },

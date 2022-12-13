@@ -11,6 +11,7 @@ import com.demo.service.dto.UserDTO;
 import com.demo.web.rest.errors.*;
 import com.demo.web.rest.vm.KeyAndPasswordVM;
 import com.demo.web.rest.vm.ManagedUserVM;
+import java.security.SecureRandom;
 import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -62,6 +63,22 @@ public class AccountResource {
         if (isPasswordLengthInvalid(managedUserVM.getPassword())) {
             throw new InvalidPasswordException();
         }
+        User user = userService.registerUser(managedUserVM, managedUserVM.getPassword());
+        mailService.sendActivationEmail(user);
+    }
+
+    @PostMapping("/enroll/create-user")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createUser(@Valid @RequestBody ManagedUserVM managedUserVM) {
+        //        if (isPasswordLengthInvalid(managedUserVM.getPassword())) {
+        //            throw new InvalidPasswordException();
+        //        }
+        SecureRandom random = new SecureRandom();
+        byte bytes[] = new byte[8];
+        random.nextBytes(bytes);
+        Base64.Encoder encoder = Base64.getUrlEncoder().withoutPadding();
+        String password = encoder.encodeToString(bytes);
+        managedUserVM.setPassword(password);
         User user = userService.registerUser(managedUserVM, managedUserVM.getPassword());
         mailService.sendActivationEmail(user);
     }

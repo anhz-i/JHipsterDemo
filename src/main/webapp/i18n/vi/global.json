@@ -35,6 +35,8 @@
     "form": {
       "username.label": "Tên tài khoản",
       "username.placeholder": "Nhập tên tài khoản của bạn",
+      "phone.label": "Phone",
+      "phone.placeholder": "Your phone",
       "newpassword.label": "Mật khẩu mới",
       "newpassword.placeholder": "Nhập mật khẩu mới",
       "confirmpassword.label": "Xác nhận mật khẩu mới",
@@ -74,6 +76,12 @@
           "invalid": "Email bạn nhập không hợp lệ.",
           "minlength": "Email phải có ít nhất 5 ký tự.",
           "maxlength": "Email không được vượt quá 50 ký tự."
+        },
+        "phone": {
+          "required": "Your phone is required.",
+          "pattern": "Your phone must be number.",
+          "minlength": "Your phone is required to be at least 10 characters.",
+          "maxlength": "Your phone cannot be longer than 20 characters."
         }
       }
     },
