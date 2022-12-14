@@ -47,8 +47,8 @@
     "messages": {
       "info": {
         "authenticated": {
-          "prefix": "Nếu bạn muốn ",
-          "link": "đăng nhập",
+          "prefix": "Bạn đã có tài khoản? ",
+          "link": "Đăng nhập",
           "suffix": ", bạn có thể thử với tài khoản mặc định:<br/>- Quản trị viên (tài khoản=\"admin\" và mật khẩu=\"admin\") <br/>- Người dùng (tài khoản=\"user\" và mật khẩu=\"user\")."
         },
         "register": {

@@ -1,19 +1,17 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { CreateUserService } from 'app/enroll/create-user/create-user.service';
+
+import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { RegisterService } from 'app/account/register/register.service';
-import { HttpErrorResponse } from '@angular/common/http';
+
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/config/error.constants';
-import { CreateUserService } from 'app/enroll/create-user/create-user.service';
 
 @Component({
   selector: 'jhi-create-user',
   templateUrl: './create-user.component.html',
-  styleUrls: ['./create-user.component.scss'],
 })
-export class CreateUserComponent implements OnInit {
-  ngOnInit(): void {}
-
+export class CreateUserComponent implements AfterViewInit {
   @ViewChild('login', { static: false })
   login?: ElementRef;
 

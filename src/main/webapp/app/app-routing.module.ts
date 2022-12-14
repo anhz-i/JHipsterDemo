@@ -26,6 +26,10 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           loadChildren: () => import('./account/account.module').then(m => m.AccountModule),
         },
         {
+          path: 'enroll',
+          loadChildren: () => import('./enroll/enroll.module').then(m => m.EnrollModule),
+        },
+        {
           path: 'login',
           loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
         },
